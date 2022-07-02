@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+    <script>
+        // function say(a = "xin chao") {
+        //     console.log(a)
+        // }
+        // say()
+        // say(undefined)
+        // say("haha")
+        // function createDiv(height = '100px',
+        //                    width = '100px',
+        //                    border = 'solid 1px red',
+        //
+        // ) {
+        //
+        //     let div = document.createElement('div');
+        //     div.style.height = height;
+        //     div.style.width = width;
+        //     div.style.border = border;
+        //
+        //     document.body.appendChild(div);
+        //     return div;
+        //
+        // }
+        // createDiv()
+        // createDiv(undefined,undefined,'solid 7px blue')
+
+        // function date( d = today()) {
+        //     console.log(d)
+        // }
+        //
+        // function today() {
+        //     return (new Date()).toLocaleDateString('en-US')
+        // }
+        //
+        // console.log(today())
+        // date()
+
+        // function requiredArg() {
+        //     throw new Error('The argument is required');
+        // }
+        //
+        // function add(x = requiredArg(), y = requiredArg()){
+        //     return x + y;
+        // }
+        //
+        // // add(10); // error
+        // // add(10,20); // OK
+        // console.log( add(10,20))
+
+        // function subtract( x = y, y = 1 ) {
+        //     return x - y;
+        // }
+        // console.log(subtract());
+        // Uncaught ReferenceError: Cannot access 'y' before initialization
+        // at subtract (tham-so-mac-dinh-trong-javascript.html?_ijt=mpc1reqhag88lh185so56cns45&_ij_reload=RELOAD_ON_SAVE:59:32)
+        // at tham-so-mac-dinh-trong-javascript.html?_ijt=mpc1reqhag88lh185so56cns45&_ij_reload=RELOAD_ON_SAVE:62:21
+
+        // function subtract( x = 1, y = x ) {
+        //     return x - y;
+        // }
+        // console.log(subtract());  //0
+
+        // let ham = () => 20
+        //
+        // // function ham1(a, b = ham()) {
+        // //     return a + b
+        // // }
+        // let ham1 = (a, b = ham()) => a + b
+        //
+        // console.log(ham1(100))
+        console.log(add())
+        add(10); // 1
+        add(10, 20); // 2
+        add(10, 20, 30); // 3
+        function add(x, y = 1, z = 2) {
+            console.log( arguments.length );
+
+            return x + y + z;
+        }
+        console.log(add(10))
+    </script>
+</body>
+</html>

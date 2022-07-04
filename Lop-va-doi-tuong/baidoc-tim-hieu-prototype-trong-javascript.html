@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Person (_age, _name) {
+            this.age = _age;
+            this.name = _name;
+        }
+        Person.prototype.height = 0;
+
+        let codegym = new Person(10, "CodeGym");
+        for (let prop in codegym) {
+            console.log(prop)
+        }
+
+        console.log(codegym.__proto__);
+    </script>
+</body>
+</html>

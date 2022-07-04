@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Shape {
+            color;
+            filled;
+            constructor(color, filled) {
+                this.color = color;
+                this.filled = filled;
+            }
+        }
+        let shape = new Shape('red', false)
+        console.log(shape)
+
+        class Circle {
+            color;
+            filled;
+            radius;
+            constructor(color, filled, radius) {
+                this.color = color;
+                this.filled = filled;
+                this.radius = radius;
+            }
+            getArea() {
+                return console.log(this.radius * this.radius * Math.PI);
+            }
+            getPerimeter() {
+                return console.log(this.radius * 2 * Math.PI);
+            }
+        }
+        let circle = new Circle('blue', true, 15)
+        console.log(circle)
+        circle.getArea()
+        circle.getPerimeter()
+
+        class Rectangle {
+            color;
+            filled;
+            width;
+            length;
+            constructor(color, filled, width, length) {
+                this.color =color;
+                this.filled = filled;
+                this.width = width;
+                this.length = length;
+            }
+            getArea() {
+                return console.log(this.width * this.length);
+            }
+            getPerimeter() {
+                return console.log((this.width + this.length) * 2);
+            }
+        }
+        let rectangle = new Rectangle('blue', true, 15, 40)
+        console.log(rectangle)
+        rectangle.getArea()
+        rectangle.getPerimeter()
+
+        class Square {
+            color;
+            filled;
+            size;
+            constructor(color, filled, size = 1.0) {
+                this.color =color;
+                this.filled = filled;
+                this.size = size;
+            }
+        }
+        let square = new Square('red', true)
+        console.log(square)
+    </script>
+</body>
+</html>

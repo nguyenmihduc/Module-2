@@ -10,14 +10,19 @@
             this.age = _age;
             this.name = _name;
         }
-        Person.prototype.height = 0;
+        Person.prototype.gender = 'male';
+        // Person.prototype.height = 0;
 
         let codegym = new Person(10, "CodeGym");
         for (let prop in codegym) {
-            console.log(prop)
+            // console.log(prop)
         }
+        // codegym.prototype.height = 3
+        console.log(codegym);
+        // console.log(codegym.__proto__);
+        let duc = new Person(30, "minh duc")
+        console.log(duc)
 
-        console.log(codegym.__proto__);
     </script>
 </body>
 </html>

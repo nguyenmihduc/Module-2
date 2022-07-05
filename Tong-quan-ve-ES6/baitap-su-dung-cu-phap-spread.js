@@ -19,7 +19,14 @@
 // recordOrders(new Date, "coffee", "yaourt", "pizza")
 // console.log(customerOrder)
 
-let array1 = [1, 2, 100, 100, 6]
-let array2 = [3, 4, 5]
-array1 = [array1,,...array2]
-console.log(array1)
+let testArray = [1,2,100,100,6];
+let array = [3,4,5];
+
+testArray = [...testArray.splice(0,2),...array];
+
+console.log(testArray);
+
+// phần 2
+testArray = [...testArray.slice(0,2),...array];
+
+console.log(testArray);

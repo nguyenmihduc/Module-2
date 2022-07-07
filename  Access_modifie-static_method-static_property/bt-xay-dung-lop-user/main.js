@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var User_1 = require("./User");
+var user1 = new User_1.User("minh", "minh@gmail", 1);
+var user2 = new User_1.User("duc", "duc@gmail", 2);
+user1.getInfo();
+user2.getInfo();
+User_1.User.isAdmin(user1);
+User_1.User.isAdmin(user2);
+user1.setRole(2);
+User_1.User.isAdmin(user1);
+User_1.User.isAdmin(user2);

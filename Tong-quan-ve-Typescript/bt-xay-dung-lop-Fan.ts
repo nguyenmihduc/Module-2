@@ -1,28 +1,22 @@
 
+enum Speed {
+    SLOW = 1,
+    MEDIUM,
+    FAST,
+}
 class Fan {
-    SLOW: number = 1;
-    MEDIUM: number = 2;
-    FAST: number = 3;
     private speed: number = 1;
     private radius: number = 5;
     private color: string = 'blue';
     private on: boolean = false;
-    constructor(speed:number, radius:number, color:string, on: boolean = false ) {
+    constructor(speed:Speed, radius:number, color:string, on: boolean = false ) {
         this.speed = speed;
         this.radius = radius;
         this.color = color;
         this.on = on;
     }
     getterSpeed() {
-        if (this.speed == 1) {
-            return "SLOW"
-        }
-        if (this.speed == 2) {
-            return "MEDIUM"
-        }
-        if (this.speed == 3) {
-            return "FAST"
-        }
+        return this.speed;
     }
     getterRadius() {
         return this.radius;
@@ -53,10 +47,10 @@ class Fan {
         }
     }
 }
-let fan1 = new Fan(3,10,"yellow",true)
+let fan1 = new Fan(Speed.FAST,10,"yellow",true)
 console.log(fan1.toString())
 
-let fan2 = new Fan(2,5,"blue",false)
+let fan2 = new Fan(Speed.MEDIUM,5,"blue",false)
 console.log(fan2.toString())
 
 fan1.setterColor("pink")

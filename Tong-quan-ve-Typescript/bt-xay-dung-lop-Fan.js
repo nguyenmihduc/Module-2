@@ -1,9 +1,12 @@
+var Speed;
+(function (Speed) {
+    Speed[Speed["SLOW"] = 1] = "SLOW";
+    Speed[Speed["MEDIUM"] = 2] = "MEDIUM";
+    Speed[Speed["FAST"] = 3] = "FAST";
+})(Speed || (Speed = {}));
 var Fan = /** @class */ (function () {
     function Fan(speed, radius, color, on) {
         if (on === void 0) { on = false; }
-        this.SLOW = 1;
-        this.MEDIUM = 2;
-        this.FAST = 3;
         this.speed = 1;
         this.radius = 5;
         this.color = 'blue';
@@ -14,15 +17,7 @@ var Fan = /** @class */ (function () {
         this.on = on;
     }
     Fan.prototype.getterSpeed = function () {
-        if (this.speed == 1) {
-            return "SLOW";
-        }
-        if (this.speed == 2) {
-            return "MEDIUM";
-        }
-        if (this.speed == 3) {
-            return "FAST";
-        }
+        return this.speed;
     };
     Fan.prototype.getterRadius = function () {
         return this.radius;
@@ -55,9 +50,9 @@ var Fan = /** @class */ (function () {
     };
     return Fan;
 }());
-var fan1 = new Fan(3, 10, "yellow", true);
+var fan1 = new Fan(Speed.FAST, 10, "yellow", true);
 console.log(fan1.toString());
-var fan2 = new Fan(2, 5, "blue", false);
+var fan2 = new Fan(Speed.MEDIUM, 5, "blue", false);
 console.log(fan2.toString());
 fan1.setterColor("pink");
 console.log(fan1.getterColor());

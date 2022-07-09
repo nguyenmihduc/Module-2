@@ -15,26 +15,24 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Square = void 0;
-var Rectangle_1 = require("./Rectangle");
-var Square = /** @class */ (function (_super) {
-    __extends(Square, _super);
-    function Square(color, filled, side) {
-        return _super.call(this, color, filled, side, side) || this;
+exports.Cylinder = void 0;
+var Circle_1 = require("./Circle");
+var Cylinder = /** @class */ (function (_super) {
+    __extends(Cylinder, _super);
+    function Cylinder(radius, color, height) {
+        var _this = _super.call(this, radius, color) || this;
+        _this._height = height;
+        return _this;
     }
-    Square.prototype.getSide = function () {
-        return this.getWidth();
+    Cylinder.prototype.getHeight = function () {
+        return this._height;
     };
-    Square.prototype.setSide = function (value) {
-        this.setWidth(value);
-        this.setLength(value);
+    Cylinder.prototype.setHeight = function (value) {
+        this._height = value;
     };
-    Square.prototype.toString = function () {
-        return "A Square with side: "
-            + this.getSide()
-            + " and "
-            + " which is a subclass of ";
+    Cylinder.prototype.getVolume = function () {
+        return this._height * _super.prototype.getArea.call(this);
     };
-    return Square;
-}(Rectangle_1.Rectangle));
-exports.Square = Square;
+    return Cylinder;
+}(Circle_1.Circle));
+exports.Cylinder = Cylinder;

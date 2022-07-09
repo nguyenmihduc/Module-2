@@ -17,6 +17,5 @@ export class Square extends Rectangle {
             + this.getSide()
             + " and "
             + " which is a subclass of "
-            + super.toString();
     }
 }

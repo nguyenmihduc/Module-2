@@ -15,26 +15,25 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Square = void 0;
-var Rectangle_1 = require("./Rectangle");
-var Square = /** @class */ (function (_super) {
-    __extends(Square, _super);
-    function Square(color, filled, side) {
-        return _super.call(this, color, filled, side, side) || this;
+exports.Point3D = void 0;
+var Point2D_1 = require("./Point2D");
+var Point3D = /** @class */ (function (_super) {
+    __extends(Point3D, _super);
+    function Point3D(x, y, z) {
+        var _this = _super.call(this, x, y) || this;
+        _this._z = z;
+        return _this;
     }
-    Square.prototype.getSide = function () {
-        return this.getWidth();
+    Point3D.prototype.getZ = function () {
+        return this._z;
     };
-    Square.prototype.setSide = function (value) {
-        this.setWidth(value);
-        this.setLength(value);
+    Point3D.prototype.setZ = function (value) {
+        this._z = value;
     };
-    Square.prototype.toString = function () {
-        return "A Square with side: "
-            + this.getSide()
-            + " and "
-            + " which is a subclass of ";
+    Point3D.prototype.setXYZ = function (x, y, z) {
+        this.setXY(x, y);
+        this._z = z;
     };
-    return Square;
-}(Rectangle_1.Rectangle));
-exports.Square = Square;
+    return Point3D;
+}(Point2D_1.Point2D));
+exports.Point3D = Point3D;

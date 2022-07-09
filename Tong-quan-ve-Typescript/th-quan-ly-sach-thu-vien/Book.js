@@ -1,4 +1,4 @@
-
+"use strict";
 // export class Book {
 //     private _ID: string;
 //     private _name: string;
@@ -24,29 +24,25 @@
 //         this._name = value;
 //     }
 // }
-
-export class Book {
-    private _ID: string;
-    private _name: string;
-
-    constructor(ID: string, name: string) {
+exports.__esModule = true;
+exports.Book = void 0;
+var Book = /** @class */ (function () {
+    function Book(ID, name) {
         this._ID = ID;
         this._name = name;
     }
-
-    getID(): string {
+    Book.prototype.getID = function () {
         return this._ID;
-    }
-
-    setID(value: string) {
+    };
+    Book.prototype.setID = function (value) {
         this._ID = value;
-    }
-
-    getName(): string {
+    };
+    Book.prototype.getName = function () {
         return this._name;
-    }
-
-    setName(value: string) {
+    };
+    Book.prototype.setName = function (value) {
         this._name = value;
-    }
-}
+    };
+    return Book;
+}());
+exports.Book = Book;

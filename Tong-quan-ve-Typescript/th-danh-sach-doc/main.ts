@@ -34,5 +34,5 @@ timSachChuaDoc()
 
 // console.log(listBooks)
 
-// tsc .\main.ts
+// tsc .\Staff.ts
 // node .\main.js

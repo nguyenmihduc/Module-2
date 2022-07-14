@@ -20,6 +20,42 @@ var TennisGame = /** @class */ (function () {
             return this.temporaryScore();
         }
     };
+    TennisGame.prototype.tieScore = function () {
+        switch (this.player1Score) {
+            case 0:
+                this.result = "Love-All";
+                break;
+            case 1:
+                this.result = "Fifteen-All";
+                break;
+            case 2:
+                this.result = "Thirty-All";
+                break;
+            case 3:
+                this.result = "Forty-All";
+                break;
+            default:
+                this.result = "Deuce";
+                break;
+        }
+        console.log(this.result);
+    };
+    TennisGame.prototype.notTieScore = function () {
+        var differenceScore = this.player1Score - this.player2Score;
+        if (differenceScore == 1) {
+            this.result = "Advantage player1";
+        }
+        else if (differenceScore == -1) {
+            this.result = "Advantage player2";
+        }
+        else if (differenceScore >= 2) {
+            this.result = "Win for player1";
+        }
+        else {
+            this.result = "Win for player2";
+        }
+        console.log(this.result);
+    };
     TennisGame.prototype.temporaryScore = function () {
         var temporaryScore = 0;
         if (this.player1Score < 4 && this.player2Score < 4 && this.player1Score !== this.player2Score) {
@@ -28,6 +64,7 @@ var TennisGame = /** @class */ (function () {
                     temporaryScore = this.player1Score;
                 }
                 else {
+                    this.result += "-";
                     temporaryScore = this.player2Score;
                 }
                 switch (temporaryScore) {
@@ -44,46 +81,6 @@ var TennisGame = /** @class */ (function () {
                         this.result += "Forty";
                         break;
                 }
-            }
-        }
-        console.log(this.result);
-    };
-    TennisGame.prototype.notTieScore = function () {
-        if (this.player1Score >= 4 || this.player2Score >= 4) {
-            var differenceScore = this.player1Score - this.player2Score;
-            if (differenceScore == 1) {
-                this.result = "Advantage player1";
-            }
-            else if (differenceScore == -1) {
-                this.result = "Advantage player2";
-            }
-            else if (differenceScore >= 2) {
-                this.result = "Win for player1";
-            }
-            else {
-                this.result = "Win for player2";
-            }
-        }
-        console.log(this.result);
-    };
-    TennisGame.prototype.tieScore = function () {
-        if (this.player1Score == this.player2Score) {
-            switch (this.player1Score) {
-                case 0:
-                    this.result = "Love-All";
-                    break;
-                case 1:
-                    this.result = "Fifteen-All";
-                    break;
-                case 2:
-                    this.result = "Thirty-All";
-                    break;
-                case 3:
-                    this.result = "Forty-All";
-                    break;
-                default:
-                    this.result = "Deuce";
-                    break;
             }
         }
         console.log(this.result);

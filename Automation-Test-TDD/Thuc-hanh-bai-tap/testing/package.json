@@ -1,0 +1,13 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "dependencies": {},
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2",
+    "ts-jest": "^28.0.5"
+  }
+}

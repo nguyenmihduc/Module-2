@@ -24,7 +24,6 @@ export class TennisGame {
     }
 
     private tieScore() {
-        if (this.player1Score == this.player2Score) {
             switch (this.player1Score) {
                 case 0:
                     this.result = "Love-All";
@@ -42,12 +41,10 @@ export class TennisGame {
                     this.result = "Deuce";
                     break;
             }
-        }
         console.log(this.result)
     }
 
     private notTieScore() {
-        if (this.player1Score >= 4 || this.player2Score >= 4) {
             let differenceScore = this.player1Score - this.player2Score
             if (differenceScore == 1) {
                 this.result = "Advantage player1";
@@ -58,7 +55,6 @@ export class TennisGame {
             } else {
                 this.result = "Win for player2";
             }
-        }
         console.log(this.result)
     }
 
@@ -69,6 +65,7 @@ export class TennisGame {
                 if (i == 1) {
                     temporaryScore = this.player1Score;
                 } else {
+                    this.result += "-"
                     temporaryScore = this.player2Score;
                 }
                 switch (temporaryScore) {

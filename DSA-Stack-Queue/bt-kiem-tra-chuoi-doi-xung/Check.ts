@@ -26,11 +26,12 @@ export class CheckSymmetry {
                 count++;
             }
         }
-        if (count == this.array.length) {
+        if (count == this.array.length && count > 1) {
             console.log(this.string + " Là chuỗi đối xứng");
         } else {
             console.log(this.string + " Không phải chuỗi đối xứng");
         }
+
     }
 }
 

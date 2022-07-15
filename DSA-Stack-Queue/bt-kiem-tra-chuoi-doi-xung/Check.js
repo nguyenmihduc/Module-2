@@ -26,7 +26,7 @@ var CheckSymmetry = /** @class */ (function () {
                 count++;
             }
         }
-        if (count == this.array.length) {
+        if (count == this.array.length && count > 1) {
             console.log(this.string + " Là chuỗi đối xứng");
         }
         else {

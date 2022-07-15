@@ -7,3 +7,5 @@ var checkSymmetry2 = new Check_1.CheckSymmetry('able was I ere I saw');
 checkSymmetry2.check();
 var checkSymmetry3 = new Check_1.CheckSymmetry('1hgf23a32fgh1');
 checkSymmetry3.check();
+var checkSymmetry4 = new Check_1.CheckSymmetry('a');
+checkSymmetry4.check();

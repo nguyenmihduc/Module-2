@@ -3,14 +3,18 @@ class FindNextDay {
     day: number;
     month: number;
     year: number;
-    array31day: number[] = [1,3,5,7,8,10,12];
-    array30day: number[] = [4,6,9,11];
-    array28or29day: number[] = [2]
+    array31day: number[]
+    array30day: number[]
+    array28or29day: number[]
     maxDay: number;
     constructor(day: number, month: number, year: number) {
         this.day = day;
         this.month = month;
         this.year = year;
+        this.array31day = [1,3,5,7,8,10,12];
+        this.array30day = [4,6,9,11];
+        this.array28or29day = [2]
+
     }
     getMaxDay(): number {
         this.array31day.forEach((item) => {

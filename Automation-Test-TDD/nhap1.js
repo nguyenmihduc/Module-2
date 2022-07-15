@@ -1,11 +1,11 @@
 var FindNextDay = /** @class */ (function () {
     function FindNextDay(day, month, year) {
-        this.array31day = [1, 3, 5, 7, 8, 10, 12];
-        this.array30day = [4, 6, 9, 11];
-        this.array28or29day = [2];
         this.day = day;
         this.month = month;
         this.year = year;
+        this.array31day = [1, 3, 5, 7, 8, 10, 12];
+        this.array30day = [4, 6, 9, 11];
+        this.array28or29day = [2];
     }
     FindNextDay.prototype.getMaxDay = function () {
         var _this = this;

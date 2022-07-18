@@ -31,6 +31,8 @@ export class  Stack {
         let x = this.container.push("a")
         let y = this.container.push("c")
         let l = this.container.push("c")
+        let k = this.container.push("c")
+        let p = this.container.push("c")
         for (let i = 1; i < 3; i++) {if (this.container.pop() === this.container.pop()) {
             console.log('hahaha')
         } else {
@@ -54,15 +56,13 @@ export class  Stack {
 let stack1 = new Stack()
 let stack2 = new Stack()
 
-stack1.push(1)
-stack1.push(2)
-stack1.push(3)
-stack1.push(4)
-
-console.log(stack1)
+// stack1.push(1)
+// stack1.push(2)
+// stack1.push(3)
+// stack1.push(4)
 
 stack1.pope()
-
+console.log(stack1)
 
 // console.log(stack1)
 // stack1.ctrlZ(stack2)

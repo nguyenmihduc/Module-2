@@ -19,5 +19,6 @@ console.log('-----Bệnh nhân đã khám-----');
 queuePriorityPatient.dequeue();
 queuePriorityPatient.dequeue();
 queuePriorityPatient.dequeue();
+console.table(queuePriorityPatient.huhu);
 console.log('-----Bệnh nhân chưa khám-----');
 queuePriorityPatient.showList();

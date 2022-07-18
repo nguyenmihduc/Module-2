@@ -1,6 +1,7 @@
 
 export class QueuePriorityPatient {
     listPatients: any[] = [];
+    huhu: any [] = []
      constructor() {
      }
      enqueue(patient) {
@@ -21,7 +22,8 @@ export class QueuePriorityPatient {
          return priorityIndex
      }
      dequeue() {
-         console.log(this.listPatients.splice(this.findPriorityCode(),1))
+         // console.log(this.listPatients.splice(this.findPriorityCode(),1))
+         this.huhu.push(this.listPatients.splice(this.findPriorityCode(),1))
      }
      showList() {
          console.table(this.listPatients)

@@ -4,6 +4,7 @@ exports.QueuePriorityPatient = void 0;
 var QueuePriorityPatient = /** @class */ (function () {
     function QueuePriorityPatient() {
         this.listPatients = [];
+        this.huhu = [];
     }
     QueuePriorityPatient.prototype.enqueue = function (patient) {
         this.listPatients.push(patient);
@@ -23,7 +24,8 @@ var QueuePriorityPatient = /** @class */ (function () {
         return priorityIndex;
     };
     QueuePriorityPatient.prototype.dequeue = function () {
-        console.log(this.listPatients.splice(this.findPriorityCode(), 1));
+        // console.log(this.listPatients.splice(this.findPriorityCode(),1))
+        this.huhu.push(this.listPatients.splice(this.findPriorityCode(), 1));
     };
     QueuePriorityPatient.prototype.showList = function () {
         console.table(this.listPatients);

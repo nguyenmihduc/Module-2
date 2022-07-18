@@ -33,6 +33,8 @@ var Stack = /** @class */ (function () {
         var x = this.container.push("a");
         var y = this.container.push("c");
         var l = this.container.push("c");
+        var k = this.container.push("c");
+        var p = this.container.push("c");
         for (var i = 1; i < 3; i++) {
             if (this.container.pop() === this.container.pop()) {
                 console.log('hahaha');
@@ -51,12 +53,12 @@ var Stack = /** @class */ (function () {
 exports.Stack = Stack;
 var stack1 = new Stack();
 var stack2 = new Stack();
-stack1.push(1);
-stack1.push(2);
-stack1.push(3);
-stack1.push(4);
-console.log(stack1);
+// stack1.push(1)
+// stack1.push(2)
+// stack1.push(3)
+// stack1.push(4)
 stack1.pope();
+console.log(stack1);
 // console.log(stack1)
 // stack1.ctrlZ(stack2)
 // stack1.ctrlZ(stack2)

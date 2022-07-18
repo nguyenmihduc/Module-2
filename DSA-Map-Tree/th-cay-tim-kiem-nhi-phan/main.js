@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var BinaryTree_1 = require("./BinaryTree");
+var tree = new BinaryTree_1.BinaryTree();
+tree.insert(6);
+tree.insert(5);
+tree.insert(7);
+tree.insert(3);
+tree.insert(4);
+tree.insert(9);
+tree.insert(2);
+tree.insert(99);
+console.log("The numbers of nodes ".concat(tree.totalNode));
+tree.inOder(tree.root);

@@ -29,5 +29,5 @@ book3.setStatus(true);
 sachChuaDoc();
 // sachDadoc()
 // console.log(listBooks)
-// tsc .\main.ts
+// tsc .\BubbleSort.ts
 // node .\main.js

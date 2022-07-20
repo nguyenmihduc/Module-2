@@ -1,4 +1,4 @@
-let myArray = []; // mảng gốc
+let myArray = [2,4,1,5]; // mảng gốc
 
 function sapXepMangBeDenLon(array: number[]) {
   for (let i = 0; i < array.length; i++) {
@@ -13,15 +13,15 @@ function sapXepMangBeDenLon(array: number[]) {
   }
   return array;
 }
-myArray.push(1);
-sapXepMangBeDenLon(myArray);
-myArray.push(4);
-sapXepMangBeDenLon(myArray);
-myArray.push(5);
-sapXepMangBeDenLon(myArray);
-myArray.push(2);
-sapXepMangBeDenLon(myArray);
+// myArray.push(1);
+// sapXepMangBeDenLon(myArray);
+// myArray.push(4);
+// sapXepMangBeDenLon(myArray);
+// myArray.push(5);
+// sapXepMangBeDenLon(myArray);
+// myArray.push(2);
+// sapXepMangBeDenLon(myArray);
 
 console.log(myArray);
-// console.log(sapXepMangBeDenLon(myArray));
+console.log(sapXepMangBeDenLon(myArray));
 // console.log(myArray); // mảng gốc bị thay đổi theo

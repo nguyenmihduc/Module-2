@@ -77,7 +77,35 @@ export class ManagerStudent {
         }
 
     }
-    searchStudentWithGroup() {
+    searchStudentWithGroup(groupSearch: string) {
+        let listGroupSearch: Student[] = [];
+        this.ListStudent.forEach((item) => {
+            if (groupSearch === item.group) {
+                 listGroupSearch.push(item)
+            }
+        })
+        if (listGroupSearch.length != 0) {
+            console.table(listGroupSearch);
+        } else {
+            console.log('Lớp không trùng khớp')
+            this.countOfGroup++;
+            console.log(`Sai lớp ${this.countOfGroup} lần`);
+            if (this.countOfGroup < 3) {
+                let groupSearchAgain = rl.question('Hãy nhập lại lớp khác:');
+                this.searchStudentWithGroup(groupSearchAgain);
+            }
+            else if (this.countOfGroup == 3) {
+                this.ListStudent.forEach((item) => {
+                    console.log(item.group);
+                })
+                let groupSearchAgain = rl.question('Hãy nhập lớp với gợi ý ở trên:');
+                this.searchStudentWithGroup(groupSearchAgain);
+            }
+            else if (this.countOfGroup > 3) {
+                console.log('<<<Không tồn tại lớp bạn cần tìm>>>')
+                this.countOfGroup = 0;
+            }
+        }
     }
 
     sortStudentWithAgeUp() {

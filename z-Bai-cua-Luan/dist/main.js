@@ -52,7 +52,7 @@ function inputStudent() {
     let id = rl.question('Nhập ID học viên:');
     return new Student_1.Student(name, age, email, group, id);
 }
-do {
+function showMenuAll() {
     console.log('---CHƯƠNG TRÌNH QUẢN LÝ HỌC VIÊN---');
     console.log('1. TẠO MỚI HỌC VIÊN:');
     console.log('2. HIỂN THỊ DANH SÁCH HỌC VIÊN:');
@@ -61,47 +61,72 @@ do {
     console.log('5. SỬA THÔNG TIN HỌC VIÊN:');
     console.log('6. XÓA HỌC VIÊN:');
     console.log('0. THOÁT CHƯƠNG TRÌNH:');
+}
+function showCreateStudent() {
+    let student = inputStudent();
+    managerStudent.createNewStudent(student);
+}
+function showAllListStudent() {
+    console.log('2. HIỂN THỊ DANH SÁCH HỌC VIÊN:');
+    managerStudent.showListStudent();
+}
+function showMenuSearch() {
+    console.log('3. TÌM KIẾM HỌC VIÊN:');
+    console.log('3.1---Tìm kiếm theo tên:');
+    console.log('3.2---Tìm kiếm theo tuổi:');
+    console.log('3.3---Tìm kiếm theo lớp:');
+    console.log('3.4---Back---');
+}
+function showSearchWithName() {
+    console.log('3.1---Tìm kiếm theo tên:');
+    let nameSearch = rl.question('Nhập tên muốn tìm:');
+    managerStudent.searchStudentWithName(nameSearch);
+}
+function showSearchWithAge() {
+    console.log('3.2---Tìm kiếm theo tuổi:');
+    let ageSearch = +rl.question('Nhập tuổi muốn tìm:');
+    managerStudent.searchStudentWithAge(ageSearch);
+}
+function showSearchWithGroup() {
+    console.log('3.3---Tìm kiếm theo lớp:');
+    let groupSearch = rl.question('Nhập lớp muốn tìm:');
+    managerStudent.searchStudentWithGroup(groupSearch);
+}
+function showSearchStudent() {
+    let choiceSearch;
+    do {
+        showMenuSearch();
+        choiceSearch = +rl.question('Nhập lựa chọn tìm kiếm của bạn:');
+        switch (choiceSearch) {
+            case 1: {
+                showSearchWithName();
+                break;
+            }
+            case 2: {
+                showSearchWithAge();
+                break;
+            }
+            case 3: {
+                showSearchWithGroup();
+                break;
+            }
+        }
+    } while (choiceSearch != 4);
+}
+do {
+    showMenuAll();
     choice = +rl.question('Nhập lựa chọn của bạn:');
     switch (choice) {
         case 1: {
-            let student = inputStudent();
-            managerStudent.createNewStudent(student);
+            showCreateStudent();
             break;
         }
         case 2: {
-            console.log('2. HIỂN THỊ DANH SÁCH HỌC VIÊN:');
-            managerStudent.showListStudent();
+            showAllListStudent();
             break;
         }
         case 3: {
-            let choiceSearch;
-            do {
-                console.log('3. TÌM KIẾM HỌC VIÊN:');
-                console.log('3.1---Tìm kiếm theo tên:');
-                console.log('3.2---Tìm kiếm theo tuổi:');
-                console.log('3.3---Tìm kiếm theo lớp:');
-                console.log('3.4---Back---');
-                choiceSearch = +rl.question('Nhập lựa chọn tìm kiếm của bạn:');
-                switch (choiceSearch) {
-                    case 1: {
-                        console.log('3.1---Tìm kiếm theo tên:');
-                        let nameSearch = rl.question('Nhập tên muốn tìm:');
-                        managerStudent.searchStudentWithName(nameSearch);
-                        break;
-                    }
-                    case 2: {
-                        console.log('3.2---Tìm kiếm theo tuổi:');
-                        let ageSearch = +rl.question('Nhập tuổi muốn tìm:');
-                        managerStudent.searchStudentWithAge(ageSearch);
-                        break;
-                    }
-                    case 3: {
-                        console.log('3.3---Tìm kiếm theo lớp:');
-                        let groupSearch = rl.question('Nhập lớp muốn tìm:');
-                        break;
-                    }
-                }
-            } while (choiceSearch != 4);
+            showSearchStudent();
             break;
         }
         case 4: {

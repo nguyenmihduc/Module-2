@@ -29,4 +29,3 @@ catch (error) {
         console.log(error.message);
     }
 }
-//# sourceMappingURL=main.js.map

@@ -9,6 +9,15 @@ class Student {
         this._group = group;
         this._id = id;
     }
+    static IdOfStudent() {
+        let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let lengthId = 4;
+        let randomID = '';
+        for (let i = lengthId; i > 0; i--) {
+            randomID += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return randomID;
+    }
     get name() {
         return this._name;
     }
@@ -36,7 +45,7 @@ class Student {
     get id() {
         return this._id;
     }
-    set id(value) {
+    setId(value) {
         this._id = value;
     }
 }

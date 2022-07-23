@@ -8,6 +8,7 @@ export class ManagerStudent {
     public countOfGroup: number =0;
     constructor() {
     }
+
     createNewStudent(student: Student) {
         this.ListStudent.push(student);
     }
@@ -23,6 +24,7 @@ export class ManagerStudent {
         })
         if (listNameSearch.length != 0) {
             console.table(listNameSearch)
+            console.log(`Hiện tại có ${listNameSearch.length} học viên tên là ${nameSearch}`)
         } else {
             console.log('<<<Tên học viên không tồn tại>>>')
             this.countOfName++
@@ -115,7 +117,14 @@ export class ManagerStudent {
     updateStudent(indexUpdate: number, newInfo: Student) {
         this.ListStudent[indexUpdate] = newInfo
     }
-    deleteStudent(index: number) {
-        this.ListStudent.splice(index,1)
+    deleteStudent(name: string) {
+        this.searchStudentWithName(name)
+        let idDelete = rl.question('Nhập id của học viên muốn xóa:')
+        this.ListStudent.forEach((item, index) => {
+            if (idDelete === item.id) {
+                console.log(`<<<Bạn đã xóa Học viên tên: ${item.name}, ${item.age} tuổi, lớp: ${item.group}, id: ${item.id} thành công>>>`)
+                this.ListStudent.splice(index, 1)
+            }
+        })
     }
 }

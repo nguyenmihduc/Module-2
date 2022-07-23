@@ -6,14 +6,22 @@ export class Student {
     private _group: string;
     private _id: string;
 
-    constructor(name: string, age: number, email: string, group: string, id: string) {
+    constructor(name: string, age: number, email: string, group: string, id: string ) {
         this._name = name;
         this._age = age;
         this._email = email;
         this._group = group;
         this._id = id;
     }
-
+    static IdOfStudent() {
+        let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let lengthId = 4;
+        let randomID  = ''
+        for (let i = lengthId; i > 0; i--) {
+            randomID += chars[Math.floor(Math.random() * chars.length)]
+        }
+        return randomID;
+    }
     get name(): string {
         return this._name;
     }
@@ -50,7 +58,7 @@ export class Student {
         return this._id;
     }
 
-    set id(value: string) {
+    setId(value: string) {
         this._id = value;
     }
 }

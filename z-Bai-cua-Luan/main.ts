@@ -121,9 +121,57 @@ do {
         }
         case 5: {
             console.log('5. SỬA THÔNG TIN HỌC VIÊN:');
-            let indexUpdate = +rl.question('Nhập vị trí cần chỉnh sửa:');
-            let newInfo = inputStudent();
-            managerStudent.updateStudent(indexUpdate, newInfo)
+            let nameNeedUpdate = rl.question('Nhập tên học viên cần chỉnh sửa:');
+            managerStudent.searchStudentWithName(nameNeedUpdate)
+            let countUpdate = 0;
+            let indexUpdate = -1;
+            let idUpdate = rl.question('Nhập id học viên cần chỉnh sửa:')
+            managerStudent.ListStudent.forEach((item, index) => {
+                if (idUpdate === item.id) {
+                    countUpdate++;
+                    indexUpdate = index;
+                }
+            })
+            if (countUpdate == 0) {
+                console.log("<<<id không tồn tại, hãy chọn thao tác khác>>>")
+            } else if ( countUpdate != 0) {
+                let choiceUpdate;
+                do {
+                    console.table(managerStudent.ListStudent[indexUpdate])
+                    console.log('5.1--- Chỉnh sửa tên:');
+                    console.log('5.2--- Chỉnh sửa tuổi:');
+                    console.log('5.3--- Chỉnh sửa email:');
+                    console.log('5.4--- Chỉnh sửa lớp:');
+                    console.log('5.5--- Back---');
+                    choiceUpdate = +rl.question('Nhập lựa chọn chỉnh sửa của bạn:')
+                    switch (choiceUpdate) {
+                        case 1: {
+                            console.log('5.1--- Chỉnh sửa tên:');
+                            let nameUpdate = rl.question('Nhập tên mới:');
+                            managerStudent.updateNameOfStudent(indexUpdate, nameUpdate);
+                            break;
+                        }
+                        case 2: {
+                            console.log('5.2--- Chỉnh sửa tuổi:');
+                            let ageUpdate = +rl.question('Nhập tuổi mới:');
+                            managerStudent.updateAgeOfStudent(indexUpdate, ageUpdate)
+                            break;
+                        }
+                        case 3: {
+                            console.log('5.3--- Chỉnh sửa email:');
+                            let emailUpdate = rl.question('Nhập email mới:');
+                            managerStudent.updateEmailOfStudent(indexUpdate, emailUpdate)
+                            break;
+                        }
+                        case 4: {
+                            console.log('5.4--- Chỉnh sửa lớp:');
+                            let groupUpdate = rl.question('Nhập lớp mới:');
+                            managerStudent.updateGroupOfStudent(indexUpdate, groupUpdate)
+                            break;
+                        }
+                    }
+                } while (choiceUpdate != 5)
+            }
             break;
         }
         case 6: {
@@ -135,6 +183,5 @@ do {
         default:
             break;
     }
-
 } while (choice != 0)
 

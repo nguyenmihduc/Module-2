@@ -114,17 +114,38 @@ export class ManagerStudent {
     }
     sortStudentWithAgeDown() {
     }
+    updateNameOfStudent(indexUpdate: number, nameUpdate: string) {
+        this.ListStudent[indexUpdate].name = nameUpdate
+    }
+    updateAgeOfStudent(indexUpdate: number, ageUpdate: number) {
+        this.ListStudent[indexUpdate].age = ageUpdate
+    }
+    updateEmailOfStudent(indexUpdate: number, emailUpdate: string) {
+        this.ListStudent[indexUpdate].email = emailUpdate
+    }
+    updateGroupOfStudent(indexUpdate: number, groupUpdate: string) {
+        this.ListStudent[indexUpdate].group = groupUpdate
+    }
+
     updateStudent(indexUpdate: number, newInfo: Student) {
         this.ListStudent[indexUpdate] = newInfo
     }
     deleteStudent(name: string) {
         this.searchStudentWithName(name)
+        let countDelete = 0;
+        let indexDelete = -1;
         let idDelete = rl.question('Nhập id của học viên muốn xóa:')
         this.ListStudent.forEach((item, index) => {
             if (idDelete === item.id) {
-                console.log(`<<<Bạn đã xóa Học viên tên: ${item.name}, ${item.age} tuổi, lớp: ${item.group}, id: ${item.id} thành công>>>`)
-                this.ListStudent.splice(index, 1)
+                indexDelete = index;
+                countDelete++
             }
         })
+        if(countDelete != 0) {
+            console.log(`<<<Bạn đã xóa Học viên tên: ${this.ListStudent[indexDelete].name}, ${this.ListStudent[indexDelete].age} tuổi, lớp: ${this.ListStudent[indexDelete].group}, id: ${this.ListStudent[indexDelete].id} thành công>>>`)
+            this.ListStudent.splice(indexDelete, 1)
+        } else {
+            console.log("<<<id không tồn tại, hãy chọn thao tác khác>>>")
+        }
     }
 }

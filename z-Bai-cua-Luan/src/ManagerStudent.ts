@@ -47,7 +47,6 @@ export class ManagerStudent {
         }
     }
 
-
     searchStudentWithAge(ageSearch: number) {
         let listAgeSearch: Student[] = [];
         this.ListStudent.forEach((item) => {
@@ -77,8 +76,8 @@ export class ManagerStudent {
                 this.countOfAge = 0;
             }
         }
-
     }
+
     searchStudentWithGroup(groupSearch: string) {
         let listGroupSearch: Student[] = [];
         this.ListStudent.forEach((item) => {
@@ -111,25 +110,29 @@ export class ManagerStudent {
     }
 
     sortStudentWithAgeUp() {
+        this.showListStudent()
     }
+
     sortStudentWithAgeDown() {
+        this.showListStudent()
     }
+
     updateNameOfStudent(indexUpdate: number, nameUpdate: string) {
         this.ListStudent[indexUpdate].name = nameUpdate
     }
+
     updateAgeOfStudent(indexUpdate: number, ageUpdate: number) {
         this.ListStudent[indexUpdate].age = ageUpdate
     }
+
     updateEmailOfStudent(indexUpdate: number, emailUpdate: string) {
         this.ListStudent[indexUpdate].email = emailUpdate
     }
+
     updateGroupOfStudent(indexUpdate: number, groupUpdate: string) {
         this.ListStudent[indexUpdate].group = groupUpdate
     }
 
-    updateStudent(indexUpdate: number, newInfo: Student) {
-        this.ListStudent[indexUpdate] = newInfo
-    }
     deleteStudent(name: string) {
         this.searchStudentWithName(name)
         let countDelete = 0;

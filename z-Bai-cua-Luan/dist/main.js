@@ -129,7 +129,46 @@ do {
             break;
         }
         case 4: {
-            console.log('4. SẮP XẾP HỌC VIÊN:');
+            let choiceSort;
+            do {
+                console.log('4. SẮP XẾP HỌC VIÊN:');
+                console.log('4.1---Sắp xếp theo độ tuổi tăng dần');
+                console.log('4.2---Sắp xếp theo độ tuổi giảm dần');
+                console.log('4.3---Back---');
+                choiceSort = +rl.question('Nhập lựa chọn của bạn:');
+                switch (choiceSort) {
+                    case 1: {
+                        console.log('4.1---Sắp xếp theo độ tuổi tăng dần');
+                        let temp;
+                        for (let i = 0; i < managerStudent.ListStudent.length; i++) {
+                            for (let j = i; j < managerStudent.ListStudent.length; j++) {
+                                if (managerStudent.ListStudent[i].age > managerStudent.ListStudent[j].age) {
+                                    temp = managerStudent.ListStudent[i];
+                                    managerStudent.ListStudent[i] = managerStudent.ListStudent[j];
+                                    managerStudent.ListStudent[j] = temp;
+                                }
+                            }
+                        }
+                        managerStudent.sortStudentWithAgeUp();
+                        break;
+                    }
+                    case 2: {
+                        console.log('4.2---Sắp xếp theo độ tuổi giảm dần');
+                        let temp;
+                        for (let i = 0; i < managerStudent.ListStudent.length; i++) {
+                            for (let j = i; j < managerStudent.ListStudent.length; j++) {
+                                if (managerStudent.ListStudent[i].age < managerStudent.ListStudent[j].age) {
+                                    temp = managerStudent.ListStudent[i];
+                                    managerStudent.ListStudent[i] = managerStudent.ListStudent[j];
+                                    managerStudent.ListStudent[j] = temp;
+                                }
+                            }
+                        }
+                        managerStudent.sortStudentWithAgeDown();
+                        break;
+                    }
+                }
+            } while (choiceSort != 3);
             break;
         }
         case 5: {

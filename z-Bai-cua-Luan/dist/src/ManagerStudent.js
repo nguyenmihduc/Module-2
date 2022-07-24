@@ -133,8 +133,10 @@ class ManagerStudent {
         }
     }
     sortStudentWithAgeUp() {
+        this.showListStudent();
     }
     sortStudentWithAgeDown() {
+        this.showListStudent();
     }
     updateNameOfStudent(indexUpdate, nameUpdate) {
         this.ListStudent[indexUpdate].name = nameUpdate;
@@ -147,9 +149,6 @@ class ManagerStudent {
     }
     updateGroupOfStudent(indexUpdate, groupUpdate) {
         this.ListStudent[indexUpdate].group = groupUpdate;
-    }
-    updateStudent(indexUpdate, newInfo) {
-        this.ListStudent[indexUpdate] = newInfo;
     }
     deleteStudent(name) {
         this.searchStudentWithName(name);
